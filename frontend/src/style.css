@@ -1,0 +1,21 @@
+:root{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#182033;background:#f5f7fb;line-height:1.5;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}.hero{background:linear-gradient(135deg,#171b34,#373d7b);color:white;padding:44px 20px}
+.hero-inner{width:min(1100px,100%);margin:auto;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.eyebrow{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.12em;opacity:.82}
+h1{margin:0;font-size:clamp(30px,5vw,48px);line-height:1.1}.hero p:last-of-type{margin-bottom:0;opacity:.86}
+.container{width:min(1100px,calc(100% - 32px));margin:28px auto 60px;display:grid;gap:24px}
+.card{background:#fff;border:1px solid #e3e6ef;border-radius:18px;padding:28px;box-shadow:0 12px 34px rgba(25,32,55,.06)}
+h2{margin:0 0 6px}.muted{color:#687087}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:grid;gap:7px;margin-top:18px;font-weight:700;font-size:14px}
+input,select,textarea{width:100%;border:1px solid #d5dae6;border-radius:10px;padding:12px 13px;font:inherit;color:inherit;background:white}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:3px solid #d9d8ff;outline-offset:2px;border-color:#5d4fd6}
+small[data-error]{color:#b3261e;min-height:18px}button{border:0;border-radius:10px;padding:12px 18px;margin-top:22px;font:inherit;font-weight:800;cursor:pointer;background:#5d4fd6;color:#fff}
+button:disabled{opacity:.6;cursor:not-allowed}.secondary{margin-top:0;background:#eef0f8;color:#29304a}
+.status-pill{padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.12);white-space:nowrap;font-weight:800}
+.status-pill.online{background:rgba(70,190,120,.22)}.status-pill.offline{background:rgba(230,80,80,.22)}
+.message{margin-top:18px;padding:12px 14px;border-radius:10px;background:#eaf8ef;color:#196b39}.message.error{background:#fff0f0;color:#9b2424}.hidden{display:none}
+.section-heading{display:flex;justify-content:space-between;gap:20px;align-items:center}.applications{display:grid;gap:12px;margin-top:16px}
+.application{border:1px solid #e3e6ef;border-radius:12px;padding:16px}.application-top{display:flex;justify-content:space-between;gap:12px}
+.application-top span{color:#5d4fd6;font-size:13px;font-weight:800}.application p{margin:8px 0;color:#4c5367}
+.empty,.error-box{padding:18px;border-radius:12px;background:#f5f7fb}.error-box{background:#fff3f3;color:#7e2222}
+@media(max-width:700px){.hero-inner{display:block}.status-pill{display:inline-block;margin-top:20px}.grid{grid-template-columns:1fr;gap:0}.card{padding:20px}.section-heading{align-items:flex-start}.application-top{display:block}.application-top span{display:block;margin-top:4px}}
