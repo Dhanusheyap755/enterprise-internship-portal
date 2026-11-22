@@ -1,60 +1,83 @@
-# Production-Ready Capstone — Task 05
+# Enterprise Internship Portal — Production-Ready Capstone
 
-Full-stack internship portal upgraded for production-readiness.
+[![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Render](https://img.shields.io/badge/Render-Cloud%20Deployment-46E3B7?style=flat&logo=render&logoColor=black)](https://render.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-Framework-000000?style=flat&logo=express&logoColor=white)](https://expressjs.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-Persistent%20Store-003B57?style=flat&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![Vite](https://img.shields.io/badge/Vite-Frontend-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
 
-## Included
-- Vite frontend + Express API
-- SQLite prepared statements
-- Client/server validation
-- Helmet security headers
-- CORS
-- API rate limiting
-- Request logging
-- `/api/health` and `/api/ready`
-- Loading, success, empty and retry/error states
-- Responsive/mobile UI
-- Accessible labels, focus states and live status messages
-- Automated regression tests
-- Security/accessibility/performance checklists
-- Dockerfile + Render deployment config
-- Submission notes and walkthrough checklist
+## 📌 Project Overview
+The **Enterprise Internship Portal** is the capstone evolution of the EdVyro full-stack engineering curriculum. It represents a fully production-hardened web application designed to manage student internship postings, applications, and applicant reviews. The project features automated containerization via **Docker**, declarative cloud configuration (`render.yaml`), and strict quality/security checklists.
 
-## Local run
+---
 
-Terminal 1:
-```bash
-cd backend
-npm install
-npm run dev
+## 🎯 Problem Statement & Objectives
+- **Bridging Prototypes to Production:** Transitioning academic full-stack prototypes into resilient, containerized, and deployable cloud software.
+- **Objectives:**
+  1. Build a decoupled frontend SPA with React / Vite and a secure backend service with Node.js/Express.
+  2. Implement persistent data storage using SQLite with schema migration scripts.
+  3. Containerize the unified web service into an optimized multi-stage Docker image.
+  4. Enforce production standards verified through security and quality audits (`quality-checklist.md`, `security-checklist.md`).
+
+---
+
+## 🛠️ Technologies Used
+- **Frontend:** React, Vite, Modern CSS
+- **Backend:** Node.js, Express.js, CORS, Helmet
+- **Database:** SQLite (`better-sqlite3` / `sql.js`)
+- **DevOps & Infrastructure:** Docker, Dockerfile, `render.yaml` infrastructure-as-code
+
+---
+
+## 🚀 Key Features
+- **Containerized Architecture:** Fully reproducible environments using Docker for seamless local execution and cloud parity.
+- **Infrastructure as Code:** Declarative cloud deployment manifest via `render.yaml`.
+- **Hardened Web Security:** Protective HTTP headers (Helmet), input sanitization, and structured error handling.
+- **Persistent Data Store:** Relational SQLite database tracking companies, listings, and applicants.
+
+---
+
+## 📂 Project Folder Structure
+```
+enterprise-internship-portal/
+├── Dockerfile             # Multi-stage production container configuration
+├── render.yaml            # Render Cloud PaaS infrastructure manifest
+├── quality-checklist.md   # Production readiness and quality assurance audit
+├── security-checklist.md  # Threat mitigation and security compliance audit
+├── backend/               # Express.js REST API
+│   ├── server.js
+│   └── package.json
+├── frontend/              # React Vite SPA
+│   ├── src/
+│   ├── index.html
+│   └── vite.config.js
+└── docs/                  # Architectural documentation
 ```
 
-Terminal 2:
+---
+
+## 💻 Installation & Execution Instructions
+
+### Option 1: Run with Docker (Recommended)
 ```bash
-cd frontend
-npm install
-npm run dev
+git clone https://github.com/Dhanusheyap755/enterprise-internship-portal.git
+cd enterprise-internship-portal
+docker build -t internship-portal .
+docker run -p 3000:3000 internship-portal
 ```
 
-Open `http://localhost:5173`.
-
-## Regression tests
+### Option 2: Local Node.js Development
 ```bash
-cd backend
-npm test
+# 1. Backend
+cd backend && npm install && npm start
+
+# 2. Frontend
+cd ../frontend && npm install && npm run dev
 ```
 
-## Production build
-```bash
-cd frontend
-npm run build
-cd ../backend
-npm start
-```
+---
 
-The backend serves `frontend/dist` after the production build.
-
-## Deployment
-`render.yaml` and `Dockerfile` are included. A real production deployment should use HTTPS and a persistent managed database instead of local SQLite.
-
-## EdVyro
-Use the public GitHub repository as the proof link. Record a short walkthrough and put its URL in `docs/submission.md`.
+## 🔮 Future Enhancements
+- Kubernetes Helm chart for distributed cluster deployment.
+- Role-based applicant interview scheduling integration with Google Calendar.
